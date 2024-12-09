@@ -42,12 +42,7 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
-const _dirname = path.resolve();
-app.use(express.static(path.join(_dirname, '/frontend/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(_dirname, '/frontend/build/index.html'));
-});
 
 const port = process.env.PORT || 5000;
 
