@@ -7,13 +7,10 @@ import productRouter from './routes/productRoutes.js';
 import userRouter from './routes/userRoutes.js';
 import orderRouter from './routes/orderRoutes.js';
 import uploadRouter from './routes/uploadRoutes.js';
-import cors from 'cors'
+
 dotenv.config();
 const cors = require('cors');
-app.use(cors({
-    origin: 'https://shopinfo.onrender.com/', // L'URL de votre frontend
-    methods: ['GET', 'POST'],
-}));
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
